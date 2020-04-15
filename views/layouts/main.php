@@ -40,7 +40,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Курсы', 'url' => ['/site/index']],
 //            ['label' => 'API', 'url' => ['/api/get-currency', 'valuteID' => 'USD', 'from' => '01-01-2020', 'to' => '30-04-2020']],
-            ['label' => 'Обновить курсы', 'url' => ['/site/update']],
+//            ['label' => 'Обновить курсы', 'url' => ['/site/update']],
         ],
     ]);
     NavBar::end();

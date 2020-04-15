@@ -28,10 +28,12 @@ class CurrencyController extends Controller
      * @param string $message the message to be echoed.
      * @return int Exit code
      */
-    public function actionIndex($message = 'hello world')
+    public function actionIndex()
     {
         $client = new Client();
-        $client->createRequest();
+        $client->createRequest()->setHeaders([
+            'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36'
+        ]);
         $response = $client->get('http://www.cbr.ru/scripts/XML_daily.asp?date_req='.date('d-m-Y'))->send();
 
         $lastDate = Currency::find()->max('date');

@@ -39,4 +39,12 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionUpdate()
+    {
+        $path = Yii::getAlias('@app');
+        $result = exec("php $path/yii currency");
+        echo 'Команда запущена.<br>';
+        echo $result;
+    }
+
 }

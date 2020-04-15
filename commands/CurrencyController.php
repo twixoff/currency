@@ -53,7 +53,7 @@ class CurrencyController extends Controller
 
             $courses = $responseCourses->getData();
             if(!empty($courses['Record'])) {
-                foreach ($courses['Record'] as $course) {
+                if(!isset($courses['Record']['@attributes'])) foreach ($courses['Record'] as $course) {
                     $value = str_replace(',', '.', $course['Value']);
                     $date = $course['@attributes']['Date'];
                     $currency = new Currency();
@@ -68,7 +68,6 @@ class CurrencyController extends Controller
                     }
                 }
             }
-
         }
 
         return ExitCode::OK;

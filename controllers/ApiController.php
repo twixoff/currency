@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use yii\web\Response;
 use app\models\Currency;
-use yii\rest\Controller;
+use yii\web\Controller;
 
 class ApiController extends Controller
 {
